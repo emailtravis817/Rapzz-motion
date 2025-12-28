@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapzz Motion | Creative Hub</title>
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --card-gray: #1e1e1e;
+            --accent-green: #38ef7d;
+            --text-main: #ffffff;
+            --text-dim: #b0b0b0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0; padding-bottom: 80px;
+            background-color: var(--bg-dark); color: var(--text-main);
+        }
+
+        header { padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: var(--bg-dark); z-index: 100; border-bottom: 1px solid #333; }
+        .brand { font-weight: bold; font-size: 1.2rem; color: var(--accent-green); }
+        
+        .status-bar { text-align: center; font-size: 0.8rem; color: var(--text-dim); padding: 5px 0; background: #1a1a1a; }
+
+        .container { padding: 20px; display: none; }
+        .container.active { display: block; }
+
+        /* CARDS & CONTENT */
+        .content-card { background: var(--card-gray); border-radius: 12px; padding: 15px; margin-bottom: 15px; border-left: 4px solid var(--accent-green); }
+        .content-card h3 { margin-top: 0; font-size: 1rem; color: var(--accent-green); }
+        .content-card p { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 10px; }
+        .step-list { font-size: 0.85rem; padding-left: 18px; color: var(--text-dim); }
+        .step-list li { margin-bottom: 8px; }
+
+        /* PROJECT LIST STYLE */
+        .project-item { background: var(--card-gray); border-radius: 10px; padding: 12px; display: flex; align-items: center; gap: 15px; margin-bottom: 10px; cursor: pointer; }
+        .project-icon { width: 50px; height: 50px; background: #333; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .project-info h4 { margin: 0; font-size: 0.9rem; }
+        .project-meta { font-size: 0.7rem; color: var(--accent-green); margin-top: 3px; }
+
+        /* BOTTOM NAV */
+        .bottom-bar { position: fixed; bottom: 0; width: 100%; background: #1a1a1a; display: flex; justify-content: space-around; align-items: center; padding: 10px 0 20px; border-top: 1px solid #333; }
+        .nav-link { text-align: center; color: var(--text-dim); font-size: 0.65rem; text-decoration: none; flex: 1; cursor: pointer; }
+        .nav-link.active { color: var(--accent-green); }
+        .nav-main-btn { background: var(--accent-green); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #000; margin-top: -35px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>☰</div>
+    <div class="brand">RAPZZ MOTION</div>
+    <div>👤</div>
+</header>
+
+<div class="status-bar">
+    <span id="live-clock">00:00:00</span> | <span id="local-tz">Memuat...</span>
+</div>
+
+<div id="page-Beranda" class="container active">
+    <h2 style="font-size: 1.1rem;">Selamat Datang</h2>
+    <div class="content-card">
+        <h3>Rapzz Motion Creative</h3>
+        <p>Gunakan navigasi di bawah untuk mempelajari cara edit, melihat daftar proyek XML/5MB, atau mencari templat yang sedang viral di TikTok.</p>
+    </div>
+    <div class="project-item" onclick="window.location.href='https://wa.me/62882007235276'">
+        <div class="project-icon">💬</div>
+        <div class="project-info">
+            <h4>Konsultasi Jasa Edit</h4>
+            <div class="project-meta">Klik untuk chat WhatsApp</div>
+        </div>
+    </div>
+</div>
+
+<div id="page-Tutorial" class="container">
+    <h2 style="font-size: 1.1rem;">Tutorial Alight Motion</h2>
+    <div class="content-card">
+        <h3>1. Dasar Penggunaan Layer</h3>
+        <p>Langkah awal memulai editing:</p>
+        <ul class="step-list">
+            <li>Klik ikon (+) dan pilih rasio (biasanya 9:16 untuk TikTok).</li>
+            <li>Tambahkan Media (Foto/Video) melalui tombol Media.</li>
+            <li>Gunakan 'Move & Transform' untuk mengatur posisi dan skala.</li>
+        </ul>
+    </div>
+    <div class="content-card">
+        <h3>2. Teknik Keyframe & Graph</h3>
+        <p>Kunci gerakan yang smooth:</p>
+        <ul class="step-list">
+            <li>Tambahkan Keyframe di awal dan akhir gerakan.</li>
+            <li>Buka menu Graph di bawah Keyframe.</li>
+            <li>Pilih kurva (In/Out) agar transisi tidak kaku.</li>
+        </ul>
+    </div>
+</div>
+
+<div id="page-Proyek" class="container">
+    <h2 style="font-size: 1.1rem;">Daftar Proyek & Preset</h2>
+    
+    <h3 style="font-size: 0.9rem; color: var(--text-dim);">Contoh Format XML</h3>
+    <div class="project-item">
+        <div class="project-icon">📄</div>
+        <div class="project-info">
+            <h4>Preset AM XML - Hard JJ</h4>
+            <div class="project-meta">Format .xml | Support Semua Versi</div>
+        </div>
+    </div>
+
+    <h3 style="font-size: 0.9rem; color: var(--text-dim); margin-top: 20px;">Contoh Link 5MB</h3>
+    <div class="project-item">
+        <div class="project-icon">🔗</div>
+        <div class="project-info">
+            <h4>Preset Link 5MB - Cinematic Blur</h4>
+            <div class="project-meta">Link Langsung Import | Versi Original</div>
+        </div>
+    </div>
+</div>
+
+<div id="page-Templat" class="container">
+    <h2 style="font-size: 1.1rem;">Tren Templat TikTok</h2>
+    <div class="content-card">
+        <h3>🔥 Tren Jedag Jedug (JJ) Tipis</h3>
+        <p>Menggunakan efek 'Tile Rotate' dengan goyangan halus (Smooth Shake). Sangat populer di FYP TikTok saat ini.</p>
+    </div>
+    <div class="content-card">
+        <h3>🎥 Tren Cinematic CC (Color Grading)</h3>
+        <p>Fokus pada pewarnaan yang deep (Gelap/Biru) menggunakan Overlay Gradien dan Efek 'Exposure/Gamma'.</p>
+    </div>
+    <div class="content-card">
+        <h3>✨ Tren Typography Lirik</h3>
+        <p>Lirik lagu berjalan dengan efek 'Text Transform' dan 'Blur'. Cocok untuk konten galau atau aesthetic.</p>
+    </div>
+</div>
+
+<nav class="bottom-bar">
+    <div class="nav-link active" onclick="showPage('Beranda')">🏠<br>Beranda</div>
+    <div class="nav-link" onclick="showPage('Tutorial')">🎓<br>Tutorial</div>
+    <div class="nav-main-btn" onclick="showPage('Proyek')">+</div>
+    <div class="nav-link" onclick="showPage('Proyek')">📂<br>Proyek</div>
+    <div class="nav-link" onclick="showPage('Templat')">🖼️<br>Templat</div>
+</nav>
+
+<script>
+    function showPage(pageId) {
+        // Sembunyikan semua container
+        document.querySelectorAll('.container').forEach(p => p.classList.remove('active'));
+        // Hilangkan class active di nav
+        document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+        
+        // Tampilkan halaman yang dipilih
+        document.getElementById('page-' + pageId).classList.add('active');
+        
+        // Cari elemen nav yang sesuai dan aktifkan (jika bukan tombol +)
+        const navs = document.querySelectorAll('.nav-link');
+        navs.forEach(nav => {
+            if(nav.innerText.includes(pageId)) nav.classList.add('active');
+        });
+    }
+
+    function startClock() {
+        setInterval(() => {
+            const now = new Date();
+            document.getElementById('live-clock').innerText = now.toLocaleTimeString('id-ID');
+        }, 1000);
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        document.getElementById('local-tz').innerText = tz.split('/')[1] || tz;
+    }
+    window.onload = startClock;
+</script>
+
+</body>
+</html>
